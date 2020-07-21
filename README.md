@@ -3,7 +3,7 @@ DB Java Challenge
   
 ## Future Scope 
 
-1.We can replace In-Memory storage with database. 
+1. We can replace In-Memory storage with database. 
 
 2. Once we will use database , we can use spring transaction management feature. 
 
