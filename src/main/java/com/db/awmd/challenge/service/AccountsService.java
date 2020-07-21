@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountsService {
 
+    public AccountsRepository getAccountsRepository() {
+        return accountsRepository;
+    }
+
     @Getter
     private final AccountsRepository accountsRepository;
 

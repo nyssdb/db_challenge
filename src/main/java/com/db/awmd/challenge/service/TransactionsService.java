@@ -26,6 +26,18 @@ public class TransactionsService {
     @Getter
     private final AccountsService accountsService;
 
+    public NotificationService getNotificationService() {
+        return notificationService;
+    }
+
+    public AccountsService getAccountsService() {
+        return accountsService;
+    }
+
+    public TransactionsRepository getTransactionsRepository() {
+        return transactionsRepository;
+    }
+
     @Getter
     private final TransactionsRepository transactionsRepository;
 

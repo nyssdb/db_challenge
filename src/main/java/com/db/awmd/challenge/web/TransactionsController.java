@@ -28,7 +28,7 @@ public class TransactionsController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> initiateTransaction(@RequestBody @Valid Transaction transaction) {
-        log.info("Making a transaction {}", transaction);
+        //log.info("Making a transaction {}", transaction);
 
         try {
             this.transactionsService.initiateTransaction(transaction);

@@ -12,6 +12,38 @@ import java.math.BigDecimal;
 @Data
 public class Transaction {
 
+    public Integer getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Integer transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
+    }
+
+    public String getReceiverId() {
+        return receiverId;
+    }
+
+    public void setReceiverId(String receiverId) {
+        this.receiverId = receiverId;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
     private Integer transactionId;
 
     @NotNull
@@ -35,4 +67,6 @@ public class Transaction {
         this.amount = amount;
         this.transactionId = null;
     }
+
+
 }

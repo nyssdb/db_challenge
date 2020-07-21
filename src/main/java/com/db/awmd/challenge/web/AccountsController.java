@@ -1,7 +1,9 @@
 package com.db.awmd.challenge.web;
 
-import javax.validation.Valid;
-
+import com.db.awmd.challenge.domain.Account;
+import com.db.awmd.challenge.exception.DuplicateAccountIdException;
+import com.db.awmd.challenge.service.AccountsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,11 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.db.awmd.challenge.domain.Account;
-import com.db.awmd.challenge.exception.DuplicateAccountIdException;
-import com.db.awmd.challenge.service.AccountsService;
-
-import lombok.extern.slf4j.Slf4j;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/v1/accounts")
@@ -33,7 +31,7 @@ public class AccountsController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> createAccount(@RequestBody @Valid Account account) {
-        log.info("Creating account {}", account);
+        //log.info("Creating account {}", account);
 
         try {
             this.accountsService.createAccount(account);
@@ -46,7 +44,7 @@ public class AccountsController {
 
     @GetMapping(path = "/{accountId}")
     public Account getAccount(@PathVariable String accountId) {
-        log.info("Retrieving account for id {}", accountId);
+        //log.info("Retrieving account for id {}", accountId);
         return this.accountsService.getAccount(accountId);
     }
 

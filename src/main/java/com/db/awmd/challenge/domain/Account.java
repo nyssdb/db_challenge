@@ -12,9 +12,21 @@ import java.math.BigDecimal;
 @Data
 public class Account {
 
+    public String getAccountId() {
+        return accountId;
+    }
+
     @NotNull
     @NotEmpty
     private final String accountId;
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
 
     @NotNull
     @Min(value = 0, message = "Initial balance must be positive.")
