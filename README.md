@@ -1,5 +1,15 @@
 # DB Java Challenge
 DB Java Challenge
+
+# To Clean and Build Run the gradle commands.
+
+gradle
+
+gradle tasks
+
+gradle wrapper
+
+gradlew clean build 
   
 ## Future Scope 
 
