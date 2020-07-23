@@ -21,4 +21,4 @@ gradlew clean build
 
 4. We can use Swagger to document API's.
 
-<!-- <!-- 5. We can use Spring boot actuator to measure health of system. --> --> 
+5. We can use Spring boot actuator to measure health of system.
