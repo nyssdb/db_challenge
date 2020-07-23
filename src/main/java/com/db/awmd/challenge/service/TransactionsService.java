@@ -76,7 +76,7 @@ public class TransactionsService {
         notificationService.notifyAboutTransfer(receiverAccount, String.format(RECEIVER_NOTIFICATION_MESSAGE,
                 transaction.getAmount().toPlainString(), senderAccount.getAccountId()));
     }
-
+    //Thread gets the lock do the transfer and then release the lock.
     private void transferAmount(Account senderAccount, Account receiverAccount, final Transaction transaction) {
         final ReentrantLock lock = new ReentrantLock();
         lock.lock();
@@ -90,7 +90,7 @@ public class TransactionsService {
             lock.unlock();
         }
     }
-
+    //In production we can use a DB so that we can take advantage of spring transaction management to insure atomic update
     private void updateBalances(final Account transferFromAccount, final Account transferToAccount, final BigDecimal amount) {
         transferFromAccount.setBalance(transferFromAccount.getBalance().subtract(amount));
         transferToAccount.setBalance(transferToAccount.getBalance().add(amount));
